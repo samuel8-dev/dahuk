@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Դահուկավազքի Դպրոց</title>
+  <style>
+    /* --- Global --- */
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f4f6f8; color:#333; }
+    a { text-decoration:none; color:inherit; }
+    h1,h2,h3 { color:#0d6efd; }
+
+    /* --- Header --- */
+    header {
+      background: linear-gradient(90deg, #0d6efd, #0a58ca);
+      color:white;
+      padding:1rem 2rem;
+      position:sticky; top:0; z-index:100;
+      display:flex; justify-content:space-between; align-items:center;
+    }
+    header h1 { font-size:1.8rem; }
+    header nav a { margin:0 1rem; font-weight:bold; transition:0.3s; }
+    header nav a:hover { color:#ffdd57; }
+
+    /* --- Sections --- */
+    section { padding:4rem 2rem; max-width:1200px; margin:auto; }
+    section p { margin:1rem 0; font-size:1.1rem; }
+
+    /* --- Lessons --- */
+    .lessons ul {
+      list-style:none;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:1.5rem;
+      padding:0;
+    }
+    .lessons li {
+      background:white;
+      padding:1.5rem;
+      border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .lessons li:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.2); }
+
+    /* --- Form --- */
+    form {
+      display:flex; flex-direction:column;
+      max-width:400px; margin:2rem auto;
+      background:white; padding:2rem; border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+    form input, form button { margin:0.5rem 0; padding:0.7rem; border-radius:6px; border:1px solid #ccc; font-size:1rem; }
+    form button { background:#0d6efd; color:white; font-weight:bold; border:none; cursor:pointer; transition:0.3s; }
+    form button:hover { background:#0a58ca; }
+
+    /* --- Gallery --- */
+    .gallery {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:1.5rem; margin-top:2rem;
+    }
+    .gallery img, .gallery video {
+      width:100%;
+      border-radius:12px;
+      cursor:pointer;
+      transition:transform 0.3s, box-shadow 0.3s;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+    .gallery img:hover, .gallery video:hover { transform:scale(1.05); box-shadow:0 8px 20px rgba(0,0,0,0.2); }
+
+    /* --- Footer --- */
+    footer {
+      text-align:center;
+      background:#0d6efd;
+      color:white;
+      padding:2rem;
+      margin-top:2rem;
+    }
+
+    /* --- Responsive --- */
+    @media(max-width:768px){
+      header { flex-direction:column; gap:1rem; }
+      header nav a { display:block; margin:0.3rem 0; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Դահուկավազքի Դպրոց</h1>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#lessons">Lessons</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section id="home">
+  <h2>Բարի գալուստ Դահուկավազքի Դպրոց</h2>
+  <p>Սովորիր դահուկավազք լավագույն վարպետների հետ և վայելիր ձմեռային սպորտը:</p>
+</section>
+
+<section id="about">
+  <h2>Մեր մասին</h2>
+  <p>Մենք առաջարկում ենք սկսնակ, միջին և բարձր մակարդակի դասընթացներ, մասնագիտական ուսուցիչներով և անվտանգության ամբողջական միջոցառումներով:</p>
+</section>
+
+<section id="lessons" class="lessons">
+  <h2>Պարապունքներ</h2>
+  <ul>
+    <li>Սկսնակների դասեր – 10:00-11:30</li>
+    <li>Միջին մակարդակի դասեր – 12:00-13:30</li>
+    <li>Նվագացու դասեր – 14:00-15:30</li>
+  </ul>
+
+  <h3>Գրանցվել դասերի համար</h3>
+  <form id="registerForm">
+    <input type="text" id="name" placeholder="Անուն" required>
+    <input type="email" id="email" placeholder="Էլ․ փոստ" required>
+    <input type="tel" id="phone" placeholder="Հեռախոս" required>
+    <button type="submit">Գրանցվել</button>
+  </form>
+</section>
+
+<section id="gallery">
+  <h2>Գալերիա</h2>
+  <div class="gallery">
+    <img src="https://via.placeholder.com/300x200.png?text=Ski+1" alt="Ski 1" class="media">
+    <img src="https://via.placeholder.com/300x200.png?text=Ski+2" alt="Ski 2" class="media">
+    <video class="media">
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    </video>
+    <img src="https://via.placeholder.com/300x200.png?text=Ski+3" alt="Ski 3" class="media">
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Կոնտակտներ</h2>
+  <p>Էլ․ փոստ: info@dahukavazk.am</p>
+  <p>Հեռախոս: +374 00 000000</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Դահուկավազքի Դպրոց</p>
+</footer>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" style="
+  display:none;
+  position:fixed;
+  top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.95);
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+  flex-direction: column;">
+  <span id="close" style="position:absolute; top:20px; right:40px; color:white; font-size:3rem; cursor:pointer;">&times;</span>
+  <div id="lightbox-content" style="max-width:90%; max-height:80%; display:flex; justify-content:center; align-items:center;"></div>
+  <div style="margin-top:10px;">
+    <button id="prev" style="padding:10px 20px; margin-right:10px; cursor:pointer;">Prev</button>
+    <button id="next" style="padding:10px 20px; cursor:pointer;">Next</button>
+  </div>
+</div>
+
+<script>
+  // Registration form
+  const form = document.getElementById('registerForm');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    if(name && email && phone){
+      alert(`Շնորհակալություն գրանցվելու համար, ${name}!`);
+      form.reset();
+    } else {
+      alert('Խնդրում ենք լրացնել բոլոր դաշտերը։');
+    }
+  });
+
+  // Lightbox Gallery
+  const mediaItems = Array.from(document.querySelectorAll('.media'));
+  const lightbox = document.getElementById('lightbox');
+  const lightboxContent = document.getElementById('lightbox-content');
+  const closeBtn = document.getElementById('close');
+  const prevBtn = document.getElementById('prev');
+  const nextBtn = document.getElementById('next');
+  let currentIndex = 0;
+
+  function showLightbox(index){
+    currentIndex = index;
+    const item = mediaItems[index];
+    lightbox.style.display = 'flex';
+    if(item.tagName === 'IMG'){
+      lightboxContent.innerHTML = `<img src="${item.src}" style="max-width:100%; max-height:100%; border-radius:10px;">`;
+    } else if(item.tagName === 'VIDEO'){
+      lightboxContent.innerHTML = `<video controls autoplay style="max-width:100%; max-height:100%; border-radius:10px;">
+        <source src="${item.querySelector('source').src}" type="video/mp4">
+      </video>`;
+    }
+  }
+
+  mediaItems.forEach((item,index)=>item.addEventListener('click', ()=>showLightbox(index)));
+
+  function closeLightbox(){
+    lightbox.style.display = 'none';
+    lightboxContent.innerHTML = '';
+  }
+
+  function showNext(){
+    let nextIndex = (currentIndex + 1) % mediaItems.length;
+    showLightbox(nextIndex);
+  }
+
+  function showPrev(){
+    let prevIndex = (currentIndex - 1 + mediaItems.length) % mediaItems.length;
+    showLightbox(prevIndex);
+  }
+
+  closeBtn.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e)=>{ if(e.target === lightbox) closeLightbox(); });
+  nextBtn.addEventListener('click', (e)=>{ e.stopPropagation(); showNext(); });
+  prevBtn.addEventListener('click', (e)=>{ e.stopPropagation(); showPrev(); });
+</script>
+
+</body>
+</html>
